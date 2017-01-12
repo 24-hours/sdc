@@ -106,3 +106,7 @@ impact_impact.xwbt
 
 Thumbs.db
 .DS_Store
+
+
+# From Python
+python-scripts/driving_dataset/
