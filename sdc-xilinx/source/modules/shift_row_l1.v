@@ -7,7 +7,7 @@ module shift_row_l1
 
 // Debug
 // (1) n-k = 197, (2) Multiply (n-k) by 6 because kernel is 3*3*3*6
-parameter DEPTH = 6;//1182;
+parameter DEPTH = 1182;
 //parameter DEPTH = 197;
 reg [DEPTH-1:0] holding_register0;
 reg [DEPTH-1:0] holding_register1;
