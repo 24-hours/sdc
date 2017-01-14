@@ -1,10 +1,6 @@
 from PIL import Image
 import numpy as np
 
-image = Image.open('/users/usmankhan/Desktop/0.jpg')
-image_resized = np.asarray(image.resize((200, 66), Image.ANTIALIAS))
-image_resized = image_resized[:,:,0]
-
 def conv(image, kernel):
 	result = []
 	k = len(kernel)
@@ -153,6 +149,11 @@ endmodule""")
 
 	f.close()
 
+
+image = Image.open('driving_dataset/0.jpg')
+image_resized = np.asarray(image.resize((200, 66), Image.ANTIALIAS))
+image_resized = image_resized[:,:,0]
+
 kernel_0 =  np.asarray(np.matrix("1 0 1; 1 0 0; 0 1 0")) 
 kernel_1 =  np.asarray(np.matrix("0 0 1; 1 1 0; 0 1 1")) 
 kernel_2 =  np.asarray(np.matrix("0 0 1; 1 1 0; 0 1 0")) 
@@ -162,6 +163,3 @@ kernel_5 =  np.asarray(np.matrix("0 0 1; 1 0 0; 1 1 0"))
 
 kernel_set = [kernel_0, kernel_1, kernel_2, kernel_3, kernel_4, kernel_5]
 gen_script(image_resized, kernel_set)
-
-
-
