@@ -1,7 +1,5 @@
 `timescale 1ns / 1ps
 
-//I HAVE TAKEN MACS OUT AND IT IS SIMULATING CORRECTLY.
-
 module conv_l1(
     	input clk,
     	input reset,
