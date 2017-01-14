@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="C:/Dev/Projects/sdc/sdc-xilinx/conv_l1_test_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="conv_l1_test" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="24" />
+   <wvobject fp_name="/conv_l1_test/pxl_in" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">pxl_in[7:0]</obj_property>
+      <obj_property name="ObjectShortName">pxl_in[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/conv_l1_test/reg00" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">reg00[15:0]</obj_property>
+      <obj_property name="ObjectShortName">reg00[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/conv_l1_test/reg01" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">reg01[15:0]</obj_property>
+      <obj_property name="ObjectShortName">reg01[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/conv_l1_test/reg02" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">reg02[15:0]</obj_property>
+      <obj_property name="ObjectShortName">reg02[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/conv_l1_test/outs1" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">outs1[15:0]</obj_property>
+      <obj_property name="ObjectShortName">outs1[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/conv_l1_test/reg10" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">reg10[15:0]</obj_property>
+      <obj_property name="ObjectShortName">reg10[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/conv_l1_test/reg11" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">reg11[15:0]</obj_property>
+      <obj_property name="ObjectShortName">reg11[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/conv_l1_test/reg12" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">reg12[15:0]</obj_property>
+      <obj_property name="ObjectShortName">reg12[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/conv_l1_test/outs2" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">outs2[15:0]</obj_property>
+      <obj_property name="ObjectShortName">outs2[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/conv_l1_test/reg20" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">reg20[15:0]</obj_property>
+      <obj_property name="ObjectShortName">reg20[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/conv_l1_test/reg21" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">reg21[15:0]</obj_property>
+      <obj_property name="ObjectShortName">reg21[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/conv_l1_test/reg22" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">reg22[15:0]</obj_property>
+      <obj_property name="ObjectShortName">reg22[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/conv_l1_test/pxl_out" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">pxl_out[15:0]</obj_property>
+      <obj_property name="ObjectShortName">pxl_out[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/conv_l1_test/clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/conv_l1_test/reset" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/conv_l1_test/kernel_00" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">kernel_00[7:0]</obj_property>
+      <obj_property name="ObjectShortName">kernel_00[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/conv_l1_test/kernel_01" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">kernel_01[7:0]</obj_property>
+      <obj_property name="ObjectShortName">kernel_01[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/conv_l1_test/kernel_02" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">kernel_02[7:0]</obj_property>
+      <obj_property name="ObjectShortName">kernel_02[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/conv_l1_test/kernel_10" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">kernel_10[7:0]</obj_property>
+      <obj_property name="ObjectShortName">kernel_10[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/conv_l1_test/kernel_11" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">kernel_11[7:0]</obj_property>
+      <obj_property name="ObjectShortName">kernel_11[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/conv_l1_test/kernel_12" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">kernel_12[7:0]</obj_property>
+      <obj_property name="ObjectShortName">kernel_12[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/conv_l1_test/kernel_20" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">kernel_20[7:0]</obj_property>
+      <obj_property name="ObjectShortName">kernel_20[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/conv_l1_test/kernel_21" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">kernel_21[7:0]</obj_property>
+      <obj_property name="ObjectShortName">kernel_21[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/conv_l1_test/kernel_22" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">kernel_22[7:0]</obj_property>
+      <obj_property name="ObjectShortName">kernel_22[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+</wave_config>
