@@ -1,7 +1,9 @@
 from PIL import Image
 import numpy as np
 
-#temp=np.asarray(Image.open('C:/Users/msaad/Downloads/Telegram Desktop/0.jpg'))
+image = Image.open('/users/usmankhan/Desktop/0.jpg')
+image_resized = np.asarray(image.resize((200, 66), Image.ANTIALIAS))
+image_resized = image_resized[:,:,0]
 
 def conv(image, kernel):
 	result = []
@@ -11,7 +13,7 @@ def conv(image, kernel):
 	for j in range(0, len(image) - k + 1):
 		temp = []
 		for i in range(0, len(image[0]) - k + 1):
-			multiplier = image[j:k + j, i:k + i]
+			multiplier = image[j:k + j,i:k + i]
 			temp.append(np.sum(multiplier * kernel))
 
 		result.append(temp)
@@ -27,7 +29,6 @@ def conv_multiple(image, kernel_set):
 
 def gen_script(image, kernel_set):
 	results = conv_multiple(image, kernel_set)
-
 	f_image = image.flatten()
 
 	f = open('../sdc-xilinx/source/tests/conv_l1_test.v', 'w+')
@@ -152,34 +153,15 @@ endmodule""")
 
 	f.close()
 
-
-image =   np.asarray(np.matrix("1 2 3 4; \
-								1 2 3 4; \
-								1 2 3 4; \
-								1 2 3 4"))
-
-kernel_0 =  np.asarray(np.matrix("1 0 1; \
-								  1 0 0; \
-								  0 1 0")) 
-kernel_1 =  np.asarray(np.matrix("0 0 1; \
-								  1 1 0; \
-								  0 1 1")) 
-kernel_2 =  np.asarray(np.matrix("0 0 1; \
-								  1 1 0; \
-								  0 1 0")) 
-kernel_3 =  np.asarray(np.matrix("0 0 1; \
-								  1 1 0; \
-								  0 1 0")) 
-kernel_4 =  np.asarray(np.matrix("0 0 1; \
-								  1 0 1; \
-								  0 1 0")) 
-kernel_5 =  np.asarray(np.matrix("0 0 1; \
-								  1 0 0; \
-								  1 1 0")) 
+kernel_0 =  np.asarray(np.matrix("1 0 1; 1 0 0; 0 1 0")) 
+kernel_1 =  np.asarray(np.matrix("0 0 1; 1 1 0; 0 1 1")) 
+kernel_2 =  np.asarray(np.matrix("0 0 1; 1 1 0; 0 1 0")) 
+kernel_3 =  np.asarray(np.matrix("0 0 1; 1 1 0; 0 1 0")) 
+kernel_4 =  np.asarray(np.matrix("0 0 1; 1 0 1; 0 1 0")) 
+kernel_5 =  np.asarray(np.matrix("0 0 1; 1 0 0; 1 1 0")) 
 
 kernel_set = [kernel_0, kernel_1, kernel_2, kernel_3, kernel_4, kernel_5]
-
-gen_script(image, kernel_set)
+gen_script(image_resized, kernel_set)
 
 
 
