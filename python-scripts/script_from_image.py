@@ -149,10 +149,33 @@ endmodule""")
 
 	f.close()
 
+	set_row_shift(len(image[0]) - len(kernel_set[0][0]))
+
+def set_row_shift(num):
+	with open('../sdc-xilinx/source/modules/shift_row_l1.v', 'r+') as myfile:
+	    data=myfile.read()
+	    first_half = data.split("DEPTH = ")[0]
+	    second_half = data.split("DEPTH = ")[1]
+	    to_replace = second_half.split("// ENDMARK")[0]
+	    #print(second_half)
+	    second_half = '\n// ENDMARK'.join([str(num * 6) + ";", second_half.split("// ENDMARK")[1]])
+	    #print(second_half)
+	    file_data = 'DEPTH = '.join([first_half, second_half])
+	    myfile.close()
+
+	with open('../sdc-xilinx/source/modules/shift_row_l1.v', 'w') as myfile:
+		myfile.write(file_data)
+		myfile.close()
 
 image = Image.open('driving_dataset/0.jpg')
 image_resized = np.asarray(image.resize((200, 66), Image.ANTIALIAS))
-image_resized = image_resized[:,:,0]
+
+#input_matrix = image_resized[:,:,0]
+input_matrix = np.asarray(np.matrix("1 2 3 4 5 6 7;\
+									 1 2 3 4 5 6 7;\
+									 1 2 3 4 5 6 7;\
+									 1 2 3 4 5 6 7;\
+									 1 2 3 4 5 6 7"))
 
 kernel_0 =  np.asarray(np.matrix("1 0 1; 1 0 0; 0 1 0")) 
 kernel_1 =  np.asarray(np.matrix("0 0 1; 1 1 0; 0 1 1")) 
@@ -162,4 +185,4 @@ kernel_4 =  np.asarray(np.matrix("0 0 1; 1 0 1; 0 1 0"))
 kernel_5 =  np.asarray(np.matrix("0 0 1; 1 0 0; 1 1 0")) 
 
 kernel_set = [kernel_0, kernel_1, kernel_2, kernel_3, kernel_4, kernel_5]
-gen_script(image_resized, kernel_set)
+gen_script(input_matrix, kernel_set)
