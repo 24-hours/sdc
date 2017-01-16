@@ -5,7 +5,7 @@ module shift_mac_l1
   output [15:0] data_out
 );
 
-parameter DEPTH = 6;
+parameter DEPTH = 4;
 
 reg [DEPTH-1:0] holding_register0;
 reg [DEPTH-1:0] holding_register1;

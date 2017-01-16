@@ -9,11 +9,7 @@ module conv_l1(
 		input [7:0] kernel_00, input [7:0] kernel_01, input [7:0] kernel_02,
 		input [7:0] kernel_10, input [7:0] kernel_11, input [7:0] kernel_12,
 		input [7:0] kernel_20, input [7:0] kernel_21, input [7:0] kernel_22,
-		
-		// Outputs against each MAC register and a shift register after each row
-		output [15:0] rline00, output [15:0] rline01, output [15:0] rline02, output [15:0] rlines1,
-		output [15:0] rline10, output [15:0] rline11, output [15:0] rline12, output [15:0] rlines2,
-		output [15:0] rline20, output [15:0] rline21, output [15:0] rline22,
+
     	output [15:0] pxl_out,
 		
 		output valid
@@ -22,6 +18,11 @@ module conv_l1(
 	wire [15:0] wire00; wire [15:0] wire01; wire [15:0] wire02;
 	wire [15:0] wire10; wire [15:0] wire11; wire [15:0] wire12;
 	wire [15:0] wire20; wire [15:0] wire21; wire [15:0] wire22;
+
+		// Outputs against each MAC register and a shift register after each row
+	wire [15:0] rline00; wire [15:0] rline01; wire [15:0] rline02; wire [15:0] rlines1;
+	wire [15:0] rline10; wire [15:0] rline11; wire [15:0] rline12; wire [15:0] rlines2;
+	wire [15:0] rline20; wire [15:0] rline21; wire [15:0] rline22;
 
 	// Row : 1
 	

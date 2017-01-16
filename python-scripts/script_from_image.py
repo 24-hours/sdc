@@ -72,9 +72,6 @@ module conv_l1_test;
 	reg [7:0] kernel_22;
 
 	// Outputs
-	wire [15:0] reg00; wire [15:0] reg01; wire [15:0] reg02; wire [15:0] outs1;
-	wire [15:0] reg10; wire [15:0] reg11; wire [15:0] reg12; wire [15:0] outs2;
-	wire [15:0] reg20; wire [15:0] reg21; wire [15:0] reg22;
 	wire [15:0] pxl_out; wire valid;
 
 	// Instantiate the Unit Under Test (UUT)
@@ -92,17 +89,6 @@ module conv_l1_test;
 		.kernel_20(kernel_20), 
 		.kernel_21(kernel_21), 
 		.kernel_22(kernel_22),
-		.rline00(reg00),
-		.rline01(reg01),
-		.rline02(reg02),
-		.rlines1(outs1),
-		.rline10(reg10),
-		.rline11(reg11),
-		.rline12(reg12),
-		.rlines2(outs2),
-		.rline20(reg20),
-		.rline21(reg21),
-		.rline22(reg22),
 		.valid(valid)
 	);
 
@@ -158,7 +144,7 @@ def set_row_shift(num):
 	    second_half = data.split("DEPTH = ")[1]
 	    to_replace = second_half.split("// ENDMARK")[0]
 	    #print(second_half)
-	    second_half = '\n// ENDMARK'.join([str(num * 6) + ";", second_half.split("// ENDMARK")[1]])
+	    second_half = '\n// ENDMARK'.join([str(num * 4) + ";", second_half.split("// ENDMARK")[1]])
 	    #print(second_half)
 	    file_data = 'DEPTH = '.join([first_half, second_half])
 	    myfile.close()
@@ -171,18 +157,14 @@ image = Image.open('driving_dataset/0.jpg')
 image_resized = np.asarray(image.resize((200, 66), Image.ANTIALIAS))
 
 #input_matrix = image_resized[:,:,0]
-input_matrix = np.asarray(np.matrix("1 2 3 4 5 6 7;\
-									 1 2 3 4 5 6 7;\
-									 1 2 3 4 5 6 7;\
-									 1 2 3 4 5 6 7;\
-									 1 2 3 4 5 6 7"))
-
+input_image = np.asarray(np.matrix("1 2 3 4;\
+									 1 2 3 4;\
+									 1 2 3 4;\
+									 1 2 3 4"))
 kernel_0 =  np.asarray(np.matrix("1 0 1; 1 0 0; 0 1 0")) 
 kernel_1 =  np.asarray(np.matrix("0 0 1; 1 1 0; 0 1 1")) 
 kernel_2 =  np.asarray(np.matrix("0 0 1; 1 1 0; 0 1 0")) 
 kernel_3 =  np.asarray(np.matrix("0 0 1; 1 1 0; 0 1 0")) 
-kernel_4 =  np.asarray(np.matrix("0 0 1; 1 0 1; 0 1 0")) 
-kernel_5 =  np.asarray(np.matrix("0 0 1; 1 0 0; 1 1 0")) 
 
-kernel_set = [kernel_0, kernel_1, kernel_2, kernel_3, kernel_4, kernel_5]
-gen_script(input_matrix, kernel_set)
+kernel_set = [kernel_0, kernel_1, kernel_2, kernel_3]
+gen_script(input_image, kernel_set)
