@@ -2,12 +2,22 @@ from PIL import Image
 import numpy as np
 
 N_IMAGE = 0
-USE_IMAGE_FILE = True
+USE_IMAGE_FILE = False
 
-INPUT_IMAGE = np.asarray(np.matrix("4 2 4 4 5 1;\
-									5 7 8 9 10 2;\
-									4 2 2 1 0 3;\
-									1 2 3 4 5 4"))
+INPUT_IMAGE_R = np.asarray(np.matrix("4  2  4  4  5 1; \
+									  5  7  8  9 10 2; \
+									  4  2  2  1  0 3; \
+									  1  2  3  4  5 4"))
+
+INPUT_IMAGE_G = np.asarray(np.matrix("4  2  4  4  5 1; \
+									  5  7  8  9 10 2; \
+									  4  2  2  1  0 3; \
+									  1  2  3  4  5 4"))
+
+INPUT_IMAGE_B = np.asarray(np.matrix("4  2  4  4  5 1; \
+									  5  7  8  9 10 2; \
+									  4  2  2  1  0 3; \
+									  1  2  3  4  5 4"))
 
 # Set: 1
 kernel_0_0 =  np.asarray(np.matrix("1 0 1; 1 0 0; 0 1 0"))
@@ -276,6 +286,6 @@ kernel_sets = [kernel_set_0, kernel_set_1, kernel_set_2, kernel_set_3]
 if USE_IMAGE_FILE:
 	input_matrix = [input_r, input_g, input_b]
 else:
-	input_matrix = [INPUT_IMAGE, INPUT_IMAGE, INPUT_IMAGE]
+	input_matrix = [INPUT_IMAGE_R, INPUT_IMAGE_G, INPUT_IMAGE_B]
 
 gen_script(input_matrix, kernel_sets)

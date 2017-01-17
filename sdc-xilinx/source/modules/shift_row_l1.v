@@ -9,7 +9,7 @@ module shift_row_l1
 // (1) n-k = 197, (2) Multiply (n-k) by 6 because kernel is 3*3*3*6
 
 // MARK: parameter to change
-parameter DEPTH = 28;
+parameter DEPTH = 12;
 // ENDMARK
 
 reg [DEPTH-1:0] holding_register0;
