@@ -74,10 +74,6 @@ module cnn_l1_test;
 		.pxl_0(pxl_in),
 		.pxl_1(pxl_1), 
 		.pxl_2(pxl_2), 
-		.pxl_out(pxl_out),
-		.pxl_out_0(pxl_out_0), 
-		.pxl_out_1(pxl_out_1), 
-		.pxl_out_2(pxl_out_2), 	
 		.kernel_0_00(kernel_00), 
 		.kernel_0_01(kernel_01), 
 		.kernel_0_02(kernel_02), 
@@ -105,6 +101,10 @@ module cnn_l1_test;
 		.kernel_2_20(kernel_2_20), 
 		.kernel_2_21(kernel_2_21), 
 		.kernel_2_22(kernel_2_22), 
+		.pxl_out_0(pxl_out_0), 
+		.pxl_out_1(pxl_out_1), 
+		.pxl_out_2(pxl_out_2),
+		.pxl_out(pxl_out), 	
 		.valid(valid)
 	);
 

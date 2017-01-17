@@ -37,7 +37,7 @@ def gen_script(images, kernel_sets):
 	for image in images:
 		f_image.append(image.flatten())
 
-	f = open('../sdc-xilinx/source/tests/cnn_l1_test(test).v', 'w+')
+	f = open('../sdc-xilinx/source/tests/cnn_l1_test.v', 'w+')
 
 	f.write("// Python generated script \n\n")
 	f.write("""
@@ -153,36 +153,6 @@ module cnn_l1_test;
 		// Initialize Inputs
 		clk = 0;
 		reset = 0;
-		pxl_0 = 0;
-		pxl_1 = 0;
-		pxl_2 = 0;
-		kernel_0_00 = 0;
-		kernel_0_01 = 0;
-		kernel_0_02 = 0;
-		kernel_0_10 = 0;
-		kernel_0_11 = 0;
-		kernel_0_12 = 0;
-		kernel_0_20 = 0;
-		kernel_0_21 = 0;
-		kernel_0_22 = 0;
-		kernel_1_00 = 0;
-		kernel_1_01 = 0;
-		kernel_1_02 = 0;
-		kernel_1_10 = 0;
-		kernel_1_11 = 0;
-		kernel_1_12 = 0;
-		kernel_1_20 = 0;
-		kernel_1_21 = 0;
-		kernel_1_22 = 0;
-		kernel_2_00 = 0;
-		kernel_2_01 = 0;
-		kernel_2_02 = 0;
-		kernel_2_10 = 0;
-		kernel_2_11 = 0;
-		kernel_2_12 = 0;
-		kernel_2_20 = 0;
-		kernel_2_21 = 0;
-		kernel_2_22 = 0;
 
 		// Wait 100 ns for global reset to finish
 		#100;

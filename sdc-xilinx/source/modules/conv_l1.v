@@ -11,8 +11,7 @@ module conv_l1(
 		input [7:0] kernel_20, input [7:0] kernel_21, input [7:0] kernel_22,
 
     	output [15:0] pxl_out,
-		
-		output valid
+		output [15:0] valid
     );
  
 	wire [15:0] wire00; wire [15:0] wire01; wire [15:0] wire02;
@@ -63,40 +62,5 @@ module conv_l1(
 
 	assign pxl_out = wire22;//rline22;
 	
-	reg [8:0] counter1;
-	reg [4:0] counter2;
-	reg temp;
-
-	always @(posedge clk) begin
-		if (counter2 < 2) begin
-			counter2<=0;
-			temp<=0;
-			counter1<=65; end
-		else if (counter1 < 65) begin
-			counter1 <= counter1 + 1;
-			temp <= 0; end
-		else if (counter1 < 77) begin
-			counter1 <= counter1 + 1;
-			temp <= 1; end
-		else if (counter1 < 90) begin
-			counter1 <= counter1 + 1;
-			temp <= 0; end
-		else if (counter1 > 89) begin
-			temp<=0;
-			counter1<=65;
-			counter2<=counter2+1; end
-		else begin
-			temp <= 1;
-			counter1 <= counter1 + 1;
-			counter2 <= counter2 + 1;
-			counter1 <= 0;
-			counter2 <= 0; 
-			end
-	end
-
-
-	assign valid = temp;
-
-
 endmodule
 
