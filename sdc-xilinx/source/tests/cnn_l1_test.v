@@ -1,20 +1,21 @@
 // Python generated script 
 
+
 `timescale 1ns / 1ps
 
 ////////////////////////////////////////////////////////////////////////////////
 // Company: 
 // Engineer:
 //
-// Create Date:   00:21:36 01/12/2017
-// Design Name:   conv1
-// Module Name:   C:/Dev/Projects/XilinxProject/sdc/conv1_test.v
+// Create Date:   15:57:58 01/15/2017
+// Design Name:   cnn_l1
+// Module Name:   C:/Dev/Projects/sdc/sdc-xilinx/source/tests/cnn_l1_test.v
 // Project Name:  sdc
 // Target Device:  
 // Tool versions:  
 // Description: 
 //
-// Verilog Test Fixture created by ISE for module: conv1
+// Verilog Test Fixture created by ISE for module: cnn_l1
 //
 // Dependencies:
 // 
@@ -70,7 +71,7 @@ module cnn_l1_test;
 	cnn_l1 uut (
 		.clk(clk), 
 		.reset(reset), 
-		.pxl_0(pxl_0),
+		.pxl_0(pxl_0), 
 		.pxl_1(pxl_1), 
 		.pxl_2(pxl_2), 
 		.kernel_0_00(kernel_0_00), 
@@ -81,7 +82,7 @@ module cnn_l1_test;
 		.kernel_0_12(kernel_0_12), 
 		.kernel_0_20(kernel_0_20), 
 		.kernel_0_21(kernel_0_21), 
-		.kernel_0_22(kernel_0_22),
+		.kernel_0_22(kernel_0_22), 
 		.kernel_1_00(kernel_1_00), 
 		.kernel_1_01(kernel_1_01), 
 		.kernel_1_02(kernel_1_02), 
@@ -102,19 +103,18 @@ module cnn_l1_test;
 		.kernel_2_22(kernel_2_22), 
 		.pxl_out_0(pxl_out_0), 
 		.pxl_out_1(pxl_out_1), 
-		.pxl_out_2(pxl_out_2),
-		.pxl_out(pxl_out), 	
+		.pxl_out_2(pxl_out_2), 
+		.pxl_out(pxl_out), 
 		.valid(valid)
 	);
 
-
-initial begin
+	initial begin
 		// Initialize Inputs
 		clk = 0;
 		
 		// Wait 100 ns for global reset to finish
 		#110;
-      reset = 0; 		
+      reset = 0; 				
 
 /*
 
@@ -129,6 +129,22 @@ Kernels:
 1	0	0
 0	1	0
 
+1	0	1
+1	0	0
+0	1	0
+
+1	0	1
+1	0	0
+0	1	0
+
+0	0	1
+1	1	0
+0	1	1
+
+0	0	1
+1	1	0
+0	1	1
+
 0	0	1
 1	1	0
 0	1	1
@@ -141,32 +157,52 @@ Kernels:
 1	1	0
 0	1	0
 
+0	0	1
+1	1	0
+0	1	0
+
+0	0	1
+1	1	0
+0	1	0
+
+0	0	1
+1	1	0
+0	1	0
+
+0	0	1
+1	1	0
+0	1	0
+
 Results: 
-7	11
-7	11
+Set number:0
+21	33
+21	33
 
-11	16
-11	16
+Set number:1
+33	48
+33	48
 
-8	12
-8	12
+Set number:2
+24	36
+24	36
 
-8	12
-8	12
+Set number:3
+24	36
+24	36
 
 */
+
 // Pixel no. : 0
 #20 pxl_0 = 1; pxl_1 = 1; pxl_2 = 1; 
 kernel_0_00 = 1; kernel_0_01 = 0; kernel_0_02 = 1; 
 kernel_0_10 = 1; kernel_0_11 = 0; kernel_0_12 = 0; 
-kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0;
+kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0; 
 kernel_1_00 = 1; kernel_1_01 = 0; kernel_1_02 = 1; 
 kernel_1_10 = 1; kernel_1_11 = 0; kernel_1_12 = 0; 
 kernel_1_20 = 0; kernel_1_21 = 1; kernel_1_22 = 0; 
 kernel_2_00 = 1; kernel_2_01 = 0; kernel_2_02 = 1; 
 kernel_2_10 = 1; kernel_2_11 = 0; kernel_2_12 = 0; 
 kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0; 
-
 
 #20 pxl_0 = 1; pxl_1 = 1; pxl_2 = 1; 
 kernel_0_00 = 0; kernel_0_01 = 0; kernel_0_02 = 1; 
@@ -193,42 +229,6 @@ kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0;
 #20 pxl_0 = 1; pxl_1 = 1; pxl_2 = 1; 
 kernel_0_00 = 0; kernel_0_01 = 0; kernel_0_02 = 1; 
 kernel_0_10 = 1; kernel_0_11 = 1; kernel_0_12 = 0; 
-kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0;  
-kernel_1_00 = 0; kernel_1_01 = 0; kernel_1_02 = 1; 
-kernel_1_10 = 1; kernel_1_11 = 1; kernel_1_12 = 0; 
-kernel_1_20 = 0; kernel_1_21 = 1; kernel_1_22 = 0; 
-kernel_2_00 = 0; kernel_2_01 = 0; kernel_2_02 = 1; 
-kernel_2_10 = 1; kernel_2_11 = 1; kernel_2_12 = 0; 
-kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0; 
-
-
-// Pixel no. : 0
-#20 pxl_0 = 2; pxl_1 = 2; pxl_2 = 2; 
-kernel_0_00 = 1; kernel_0_01 = 0; kernel_0_02 = 1; 
-kernel_0_10 = 1; kernel_0_11 = 0; kernel_0_12 = 0; 
-kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0;
-kernel_1_00 = 1; kernel_1_01 = 0; kernel_1_02 = 1; 
-kernel_1_10 = 1; kernel_1_11 = 0; kernel_1_12 = 0; 
-kernel_1_20 = 0; kernel_1_21 = 1; kernel_1_22 = 0; 
-kernel_2_00 = 1; kernel_2_01 = 0; kernel_2_02 = 1; 
-kernel_2_10 = 1; kernel_2_11 = 0; kernel_2_12 = 0; 
-kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0; 
-
-
-#20 pxl_0 = 2; pxl_1 = 2; pxl_2 = 2; 
-kernel_0_00 = 0; kernel_0_01 = 0; kernel_0_02 = 1; 
-kernel_0_10 = 1; kernel_0_11 = 1; kernel_0_12 = 0; 
-kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 1; 
-kernel_1_00 = 0; kernel_1_01 = 0; kernel_1_02 = 1; 
-kernel_1_10 = 1; kernel_1_11 = 1; kernel_1_12 = 0; 
-kernel_1_20 = 0; kernel_1_21 = 1; kernel_1_22 = 1; 
-kernel_2_00 = 0; kernel_2_01 = 0; kernel_2_02 = 1; 
-kernel_2_10 = 1; kernel_2_11 = 1; kernel_2_12 = 0; 
-kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 1; 
-
-#20 pxl_0 = 2; pxl_1 = 2; pxl_2 = 2;  
-kernel_0_00 = 0; kernel_0_01 = 0; kernel_0_02 = 1; 
-kernel_0_10 = 1; kernel_0_11 = 1; kernel_0_12 = 0; 
 kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0; 
 kernel_1_00 = 0; kernel_1_01 = 0; kernel_1_02 = 1; 
 kernel_1_10 = 1; kernel_1_11 = 1; kernel_1_12 = 0; 
@@ -237,170 +237,18 @@ kernel_2_00 = 0; kernel_2_01 = 0; kernel_2_02 = 1;
 kernel_2_10 = 1; kernel_2_11 = 1; kernel_2_12 = 0; 
 kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0; 
 
-#20 pxl_0 = 2; pxl_1 = 2; pxl_2 = 2; 
-kernel_0_00 = 0; kernel_0_01 = 0; kernel_0_02 = 1; 
-kernel_0_10 = 1; kernel_0_11 = 1; kernel_0_12 = 0; 
-kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0;  
-kernel_1_00 = 0; kernel_1_01 = 0; kernel_1_02 = 1; 
-kernel_1_10 = 1; kernel_1_11 = 1; kernel_1_12 = 0; 
-kernel_1_20 = 0; kernel_1_21 = 1; kernel_1_22 = 0; 
-kernel_2_00 = 0; kernel_2_01 = 0; kernel_2_02 = 1; 
-kernel_2_10 = 1; kernel_2_11 = 1; kernel_2_12 = 0; 
-kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0; 
 
-
-// Pixel no. : 0
-#20 pxl_0 = 3; pxl_1 = 3; pxl_2 = 3; 
-kernel_0_00 = 1; kernel_0_01 = 0; kernel_0_02 = 1; 
-kernel_0_10 = 1; kernel_0_11 = 0; kernel_0_12 = 0; 
-kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0;
-kernel_1_00 = 1; kernel_1_01 = 0; kernel_1_02 = 1; 
-kernel_1_10 = 1; kernel_1_11 = 0; kernel_1_12 = 0; 
-kernel_1_20 = 0; kernel_1_21 = 1; kernel_1_22 = 0; 
-kernel_2_00 = 1; kernel_2_01 = 0; kernel_2_02 = 1; 
-kernel_2_10 = 1; kernel_2_11 = 0; kernel_2_12 = 0; 
-kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0; 
-
-
-#20 pxl_0 = 3; pxl_1 = 3; pxl_2 = 3; 
-kernel_0_00 = 0; kernel_0_01 = 0; kernel_0_02 = 1; 
-kernel_0_10 = 1; kernel_0_11 = 1; kernel_0_12 = 0; 
-kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 1; 
-kernel_1_00 = 0; kernel_1_01 = 0; kernel_1_02 = 1; 
-kernel_1_10 = 1; kernel_1_11 = 1; kernel_1_12 = 0; 
-kernel_1_20 = 0; kernel_1_21 = 1; kernel_1_22 = 1; 
-kernel_2_00 = 0; kernel_2_01 = 0; kernel_2_02 = 1; 
-kernel_2_10 = 1; kernel_2_11 = 1; kernel_2_12 = 0; 
-kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 1; 
-
-#20 pxl_0 = 3; pxl_1 = 3; pxl_2 = 3; 
-kernel_0_00 = 0; kernel_0_01 = 0; kernel_0_02 = 1; 
-kernel_0_10 = 1; kernel_0_11 = 1; kernel_0_12 = 0; 
-kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0; 
-kernel_1_00 = 0; kernel_1_01 = 0; kernel_1_02 = 1; 
-kernel_1_10 = 1; kernel_1_11 = 1; kernel_1_12 = 0; 
-kernel_1_20 = 0; kernel_1_21 = 1; kernel_1_22 = 0; 
-kernel_2_00 = 0; kernel_2_01 = 0; kernel_2_02 = 1; 
-kernel_2_10 = 1; kernel_2_11 = 1; kernel_2_12 = 0; 
-kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0; 
-
-#20 pxl_0 = 3; pxl_1 = 3; pxl_2 = 3; 
-kernel_0_00 = 0; kernel_0_01 = 0; kernel_0_02 = 1; 
-kernel_0_10 = 1; kernel_0_11 = 1; kernel_0_12 = 0; 
-kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0;  
-kernel_1_00 = 0; kernel_1_01 = 0; kernel_1_02 = 1; 
-kernel_1_10 = 1; kernel_1_11 = 1; kernel_1_12 = 0; 
-kernel_1_20 = 0; kernel_1_21 = 1; kernel_1_22 = 0; 
-kernel_2_00 = 0; kernel_2_01 = 0; kernel_2_02 = 1; 
-kernel_2_10 = 1; kernel_2_11 = 1; kernel_2_12 = 0; 
-kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0; 
-
-// Pixel no. : 0
-#20 pxl_0 = 4; pxl_1 = 4; pxl_2 = 4; 
-kernel_0_00 = 1; kernel_0_01 = 0; kernel_0_02 = 1; 
-kernel_0_10 = 1; kernel_0_11 = 0; kernel_0_12 = 0; 
-kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0;
-kernel_1_00 = 1; kernel_1_01 = 0; kernel_1_02 = 1; 
-kernel_1_10 = 1; kernel_1_11 = 0; kernel_1_12 = 0; 
-kernel_1_20 = 0; kernel_1_21 = 1; kernel_1_22 = 0; 
-kernel_2_00 = 1; kernel_2_01 = 0; kernel_2_02 = 1; 
-kernel_2_10 = 1; kernel_2_11 = 0; kernel_2_12 = 0; 
-kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0; 
-
-
-#20 pxl_0 = 4; pxl_1 = 4; pxl_2 = 4; 
-kernel_0_00 = 0; kernel_0_01 = 0; kernel_0_02 = 1; 
-kernel_0_10 = 1; kernel_0_11 = 1; kernel_0_12 = 0; 
-kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 1; 
-kernel_1_00 = 0; kernel_1_01 = 0; kernel_1_02 = 1; 
-kernel_1_10 = 1; kernel_1_11 = 1; kernel_1_12 = 0; 
-kernel_1_20 = 0; kernel_1_21 = 1; kernel_1_22 = 1; 
-kernel_2_00 = 0; kernel_2_01 = 0; kernel_2_02 = 1; 
-kernel_2_10 = 1; kernel_2_11 = 1; kernel_2_12 = 0; 
-kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 1; 
-
-#20 pxl_0 = 4; pxl_1 = 4; pxl_2 = 4; 
-kernel_0_00 = 0; kernel_0_01 = 0; kernel_0_02 = 1; 
-kernel_0_10 = 1; kernel_0_11 = 1; kernel_0_12 = 0; 
-kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0; 
-kernel_1_00 = 0; kernel_1_01 = 0; kernel_1_02 = 1; 
-kernel_1_10 = 1; kernel_1_11 = 1; kernel_1_12 = 0; 
-kernel_1_20 = 0; kernel_1_21 = 1; kernel_1_22 = 0; 
-kernel_2_00 = 0; kernel_2_01 = 0; kernel_2_02 = 1; 
-kernel_2_10 = 1; kernel_2_11 = 1; kernel_2_12 = 0; 
-kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0; 
-
-#20 pxl_0 = 4; pxl_1 = 4; pxl_2 = 4; 
-kernel_0_00 = 0; kernel_0_01 = 0; kernel_0_02 = 1; 
-kernel_0_10 = 1; kernel_0_11 = 1; kernel_0_12 = 0; 
-kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0;  
-kernel_1_00 = 0; kernel_1_01 = 0; kernel_1_02 = 1; 
-kernel_1_10 = 1; kernel_1_11 = 1; kernel_1_12 = 0; 
-kernel_1_20 = 0; kernel_1_21 = 1; kernel_1_22 = 0; 
-kernel_2_00 = 0; kernel_2_01 = 0; kernel_2_02 = 1; 
-kernel_2_10 = 1; kernel_2_11 = 1; kernel_2_12 = 0; 
-kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0; 
-
-
-// Pixel no. : 0
-#20 pxl_0 = 1; pxl_1 = 1; pxl_2 = 1; 
-kernel_0_00 = 1; kernel_0_01 = 0; kernel_0_02 = 1; 
-kernel_0_10 = 1; kernel_0_11 = 0; kernel_0_12 = 0; 
-kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0;
-kernel_1_00 = 1; kernel_1_01 = 0; kernel_1_02 = 1; 
-kernel_1_10 = 1; kernel_1_11 = 0; kernel_1_12 = 0; 
-kernel_1_20 = 0; kernel_1_21 = 1; kernel_1_22 = 0; 
-kernel_2_00 = 1; kernel_2_01 = 0; kernel_2_02 = 1; 
-kernel_2_10 = 1; kernel_2_11 = 0; kernel_2_12 = 0; 
-kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0; 
-
-
-#20 pxl_0 = 1; pxl_1 = 1; pxl_2 = 1; 
-kernel_0_00 = 0; kernel_0_01 = 0; kernel_0_02 = 1; 
-kernel_0_10 = 1; kernel_0_11 = 1; kernel_0_12 = 0; 
-kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 1; 
-kernel_1_00 = 0; kernel_1_01 = 0; kernel_1_02 = 1; 
-kernel_1_10 = 1; kernel_1_11 = 1; kernel_1_12 = 0; 
-kernel_1_20 = 0; kernel_1_21 = 1; kernel_1_22 = 1; 
-kernel_2_00 = 0; kernel_2_01 = 0; kernel_2_02 = 1; 
-kernel_2_10 = 1; kernel_2_11 = 1; kernel_2_12 = 0; 
-kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 1; 
-
-#20 pxl_0 = 1; pxl_1 = 1; pxl_2 = 1; 
-kernel_0_00 = 0; kernel_0_01 = 0; kernel_0_02 = 1; 
-kernel_0_10 = 1; kernel_0_11 = 1; kernel_0_12 = 0; 
-kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0; 
-kernel_1_00 = 0; kernel_1_01 = 0; kernel_1_02 = 1; 
-kernel_1_10 = 1; kernel_1_11 = 1; kernel_1_12 = 0; 
-kernel_1_20 = 0; kernel_1_21 = 1; kernel_1_22 = 0; 
-kernel_2_00 = 0; kernel_2_01 = 0; kernel_2_02 = 1; 
-kernel_2_10 = 1; kernel_2_11 = 1; kernel_2_12 = 0; 
-kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0; 
-
-#20 pxl_0 = 1; pxl_1 = 1; pxl_2 = 1; 
-kernel_0_00 = 0; kernel_0_01 = 0; kernel_0_02 = 1; 
-kernel_0_10 = 1; kernel_0_11 = 1; kernel_0_12 = 0; 
-kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0;  
-kernel_1_00 = 0; kernel_1_01 = 0; kernel_1_02 = 1; 
-kernel_1_10 = 1; kernel_1_11 = 1; kernel_1_12 = 0; 
-kernel_1_20 = 0; kernel_1_21 = 1; kernel_1_22 = 0; 
-kernel_2_00 = 0; kernel_2_01 = 0; kernel_2_02 = 1; 
-kernel_2_10 = 1; kernel_2_11 = 1; kernel_2_12 = 0; 
-kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0; 
-
-
-// Pixel no. : 0
+// Pixel no. : 1
 #20 pxl_0 = 2; pxl_1 = 2; pxl_2 = 2; 
 kernel_0_00 = 1; kernel_0_01 = 0; kernel_0_02 = 1; 
 kernel_0_10 = 1; kernel_0_11 = 0; kernel_0_12 = 0; 
-kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0;
+kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0; 
 kernel_1_00 = 1; kernel_1_01 = 0; kernel_1_02 = 1; 
 kernel_1_10 = 1; kernel_1_11 = 0; kernel_1_12 = 0; 
 kernel_1_20 = 0; kernel_1_21 = 1; kernel_1_22 = 0; 
 kernel_2_00 = 1; kernel_2_01 = 0; kernel_2_02 = 1; 
 kernel_2_10 = 1; kernel_2_11 = 0; kernel_2_12 = 0; 
 kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0; 
-
 
 #20 pxl_0 = 2; pxl_1 = 2; pxl_2 = 2; 
 kernel_0_00 = 0; kernel_0_01 = 0; kernel_0_02 = 1; 
@@ -413,7 +261,7 @@ kernel_2_00 = 0; kernel_2_01 = 0; kernel_2_02 = 1;
 kernel_2_10 = 1; kernel_2_11 = 1; kernel_2_12 = 0; 
 kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 1; 
 
-#20 pxl_0 = 2; pxl_1 = 2; pxl_2 = 2;  
+#20 pxl_0 = 2; pxl_1 = 2; pxl_2 = 2; 
 kernel_0_00 = 0; kernel_0_01 = 0; kernel_0_02 = 1; 
 kernel_0_10 = 1; kernel_0_11 = 1; kernel_0_12 = 0; 
 kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0; 
@@ -427,7 +275,7 @@ kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0;
 #20 pxl_0 = 2; pxl_1 = 2; pxl_2 = 2; 
 kernel_0_00 = 0; kernel_0_01 = 0; kernel_0_02 = 1; 
 kernel_0_10 = 1; kernel_0_11 = 1; kernel_0_12 = 0; 
-kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0;  
+kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0; 
 kernel_1_00 = 0; kernel_1_01 = 0; kernel_1_02 = 1; 
 kernel_1_10 = 1; kernel_1_11 = 1; kernel_1_12 = 0; 
 kernel_1_20 = 0; kernel_1_21 = 1; kernel_1_22 = 0; 
@@ -436,18 +284,17 @@ kernel_2_10 = 1; kernel_2_11 = 1; kernel_2_12 = 0;
 kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0; 
 
 
-// Pixel no. : 0
+// Pixel no. : 2
 #20 pxl_0 = 3; pxl_1 = 3; pxl_2 = 3; 
 kernel_0_00 = 1; kernel_0_01 = 0; kernel_0_02 = 1; 
 kernel_0_10 = 1; kernel_0_11 = 0; kernel_0_12 = 0; 
-kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0;
+kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0; 
 kernel_1_00 = 1; kernel_1_01 = 0; kernel_1_02 = 1; 
 kernel_1_10 = 1; kernel_1_11 = 0; kernel_1_12 = 0; 
 kernel_1_20 = 0; kernel_1_21 = 1; kernel_1_22 = 0; 
 kernel_2_00 = 1; kernel_2_01 = 0; kernel_2_02 = 1; 
 kernel_2_10 = 1; kernel_2_11 = 0; kernel_2_12 = 0; 
 kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0; 
-
 
 #20 pxl_0 = 3; pxl_1 = 3; pxl_2 = 3; 
 kernel_0_00 = 0; kernel_0_01 = 0; kernel_0_02 = 1; 
@@ -474,7 +321,7 @@ kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0;
 #20 pxl_0 = 3; pxl_1 = 3; pxl_2 = 3; 
 kernel_0_00 = 0; kernel_0_01 = 0; kernel_0_02 = 1; 
 kernel_0_10 = 1; kernel_0_11 = 1; kernel_0_12 = 0; 
-kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0;  
+kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0; 
 kernel_1_00 = 0; kernel_1_01 = 0; kernel_1_02 = 1; 
 kernel_1_10 = 1; kernel_1_11 = 1; kernel_1_12 = 0; 
 kernel_1_20 = 0; kernel_1_21 = 1; kernel_1_22 = 0; 
@@ -482,18 +329,18 @@ kernel_2_00 = 0; kernel_2_01 = 0; kernel_2_02 = 1;
 kernel_2_10 = 1; kernel_2_11 = 1; kernel_2_12 = 0; 
 kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0; 
 
-// Pixel no. : 0
+
+// Pixel no. : 3
 #20 pxl_0 = 4; pxl_1 = 4; pxl_2 = 4; 
 kernel_0_00 = 1; kernel_0_01 = 0; kernel_0_02 = 1; 
 kernel_0_10 = 1; kernel_0_11 = 0; kernel_0_12 = 0; 
-kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0;
+kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0; 
 kernel_1_00 = 1; kernel_1_01 = 0; kernel_1_02 = 1; 
 kernel_1_10 = 1; kernel_1_11 = 0; kernel_1_12 = 0; 
 kernel_1_20 = 0; kernel_1_21 = 1; kernel_1_22 = 0; 
 kernel_2_00 = 1; kernel_2_01 = 0; kernel_2_02 = 1; 
 kernel_2_10 = 1; kernel_2_11 = 0; kernel_2_12 = 0; 
 kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0; 
-
 
 #20 pxl_0 = 4; pxl_1 = 4; pxl_2 = 4; 
 kernel_0_00 = 0; kernel_0_01 = 0; kernel_0_02 = 1; 
@@ -520,7 +367,7 @@ kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0;
 #20 pxl_0 = 4; pxl_1 = 4; pxl_2 = 4; 
 kernel_0_00 = 0; kernel_0_01 = 0; kernel_0_02 = 1; 
 kernel_0_10 = 1; kernel_0_11 = 1; kernel_0_12 = 0; 
-kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0;  
+kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0; 
 kernel_1_00 = 0; kernel_1_01 = 0; kernel_1_02 = 1; 
 kernel_1_10 = 1; kernel_1_11 = 1; kernel_1_12 = 0; 
 kernel_1_20 = 0; kernel_1_21 = 1; kernel_1_22 = 0; 
@@ -529,18 +376,17 @@ kernel_2_10 = 1; kernel_2_11 = 1; kernel_2_12 = 0;
 kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0; 
 
 
-// Pixel no. : 0
+// Pixel no. : 4
 #20 pxl_0 = 1; pxl_1 = 1; pxl_2 = 1; 
 kernel_0_00 = 1; kernel_0_01 = 0; kernel_0_02 = 1; 
 kernel_0_10 = 1; kernel_0_11 = 0; kernel_0_12 = 0; 
-kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0;
+kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0; 
 kernel_1_00 = 1; kernel_1_01 = 0; kernel_1_02 = 1; 
 kernel_1_10 = 1; kernel_1_11 = 0; kernel_1_12 = 0; 
 kernel_1_20 = 0; kernel_1_21 = 1; kernel_1_22 = 0; 
 kernel_2_00 = 1; kernel_2_01 = 0; kernel_2_02 = 1; 
 kernel_2_10 = 1; kernel_2_11 = 0; kernel_2_12 = 0; 
 kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0; 
-
 
 #20 pxl_0 = 1; pxl_1 = 1; pxl_2 = 1; 
 kernel_0_00 = 0; kernel_0_01 = 0; kernel_0_02 = 1; 
@@ -567,7 +413,7 @@ kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0;
 #20 pxl_0 = 1; pxl_1 = 1; pxl_2 = 1; 
 kernel_0_00 = 0; kernel_0_01 = 0; kernel_0_02 = 1; 
 kernel_0_10 = 1; kernel_0_11 = 1; kernel_0_12 = 0; 
-kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0;  
+kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0; 
 kernel_1_00 = 0; kernel_1_01 = 0; kernel_1_02 = 1; 
 kernel_1_10 = 1; kernel_1_11 = 1; kernel_1_12 = 0; 
 kernel_1_20 = 0; kernel_1_21 = 1; kernel_1_22 = 0; 
@@ -576,18 +422,17 @@ kernel_2_10 = 1; kernel_2_11 = 1; kernel_2_12 = 0;
 kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0; 
 
 
-// Pixel no. : 0
+// Pixel no. : 5
 #20 pxl_0 = 2; pxl_1 = 2; pxl_2 = 2; 
 kernel_0_00 = 1; kernel_0_01 = 0; kernel_0_02 = 1; 
 kernel_0_10 = 1; kernel_0_11 = 0; kernel_0_12 = 0; 
-kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0;
+kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0; 
 kernel_1_00 = 1; kernel_1_01 = 0; kernel_1_02 = 1; 
 kernel_1_10 = 1; kernel_1_11 = 0; kernel_1_12 = 0; 
 kernel_1_20 = 0; kernel_1_21 = 1; kernel_1_22 = 0; 
 kernel_2_00 = 1; kernel_2_01 = 0; kernel_2_02 = 1; 
 kernel_2_10 = 1; kernel_2_11 = 0; kernel_2_12 = 0; 
 kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0; 
-
 
 #20 pxl_0 = 2; pxl_1 = 2; pxl_2 = 2; 
 kernel_0_00 = 0; kernel_0_01 = 0; kernel_0_02 = 1; 
@@ -600,7 +445,7 @@ kernel_2_00 = 0; kernel_2_01 = 0; kernel_2_02 = 1;
 kernel_2_10 = 1; kernel_2_11 = 1; kernel_2_12 = 0; 
 kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 1; 
 
-#20 pxl_0 = 2; pxl_1 = 2; pxl_2 = 2;  
+#20 pxl_0 = 2; pxl_1 = 2; pxl_2 = 2; 
 kernel_0_00 = 0; kernel_0_01 = 0; kernel_0_02 = 1; 
 kernel_0_10 = 1; kernel_0_11 = 1; kernel_0_12 = 0; 
 kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0; 
@@ -614,7 +459,7 @@ kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0;
 #20 pxl_0 = 2; pxl_1 = 2; pxl_2 = 2; 
 kernel_0_00 = 0; kernel_0_01 = 0; kernel_0_02 = 1; 
 kernel_0_10 = 1; kernel_0_11 = 1; kernel_0_12 = 0; 
-kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0;  
+kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0; 
 kernel_1_00 = 0; kernel_1_01 = 0; kernel_1_02 = 1; 
 kernel_1_10 = 1; kernel_1_11 = 1; kernel_1_12 = 0; 
 kernel_1_20 = 0; kernel_1_21 = 1; kernel_1_22 = 0; 
@@ -623,18 +468,17 @@ kernel_2_10 = 1; kernel_2_11 = 1; kernel_2_12 = 0;
 kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0; 
 
 
-// Pixel no. : 0
+// Pixel no. : 6
 #20 pxl_0 = 3; pxl_1 = 3; pxl_2 = 3; 
 kernel_0_00 = 1; kernel_0_01 = 0; kernel_0_02 = 1; 
 kernel_0_10 = 1; kernel_0_11 = 0; kernel_0_12 = 0; 
-kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0;
+kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0; 
 kernel_1_00 = 1; kernel_1_01 = 0; kernel_1_02 = 1; 
 kernel_1_10 = 1; kernel_1_11 = 0; kernel_1_12 = 0; 
 kernel_1_20 = 0; kernel_1_21 = 1; kernel_1_22 = 0; 
 kernel_2_00 = 1; kernel_2_01 = 0; kernel_2_02 = 1; 
 kernel_2_10 = 1; kernel_2_11 = 0; kernel_2_12 = 0; 
 kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0; 
-
 
 #20 pxl_0 = 3; pxl_1 = 3; pxl_2 = 3; 
 kernel_0_00 = 0; kernel_0_01 = 0; kernel_0_02 = 1; 
@@ -661,7 +505,7 @@ kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0;
 #20 pxl_0 = 3; pxl_1 = 3; pxl_2 = 3; 
 kernel_0_00 = 0; kernel_0_01 = 0; kernel_0_02 = 1; 
 kernel_0_10 = 1; kernel_0_11 = 1; kernel_0_12 = 0; 
-kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0;  
+kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0; 
 kernel_1_00 = 0; kernel_1_01 = 0; kernel_1_02 = 1; 
 kernel_1_10 = 1; kernel_1_11 = 1; kernel_1_12 = 0; 
 kernel_1_20 = 0; kernel_1_21 = 1; kernel_1_22 = 0; 
@@ -669,18 +513,18 @@ kernel_2_00 = 0; kernel_2_01 = 0; kernel_2_02 = 1;
 kernel_2_10 = 1; kernel_2_11 = 1; kernel_2_12 = 0; 
 kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0; 
 
-// Pixel no. : 0
+
+// Pixel no. : 7
 #20 pxl_0 = 4; pxl_1 = 4; pxl_2 = 4; 
 kernel_0_00 = 1; kernel_0_01 = 0; kernel_0_02 = 1; 
 kernel_0_10 = 1; kernel_0_11 = 0; kernel_0_12 = 0; 
-kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0;
+kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0; 
 kernel_1_00 = 1; kernel_1_01 = 0; kernel_1_02 = 1; 
 kernel_1_10 = 1; kernel_1_11 = 0; kernel_1_12 = 0; 
 kernel_1_20 = 0; kernel_1_21 = 1; kernel_1_22 = 0; 
 kernel_2_00 = 1; kernel_2_01 = 0; kernel_2_02 = 1; 
 kernel_2_10 = 1; kernel_2_11 = 0; kernel_2_12 = 0; 
 kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0; 
-
 
 #20 pxl_0 = 4; pxl_1 = 4; pxl_2 = 4; 
 kernel_0_00 = 0; kernel_0_01 = 0; kernel_0_02 = 1; 
@@ -707,7 +551,7 @@ kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0;
 #20 pxl_0 = 4; pxl_1 = 4; pxl_2 = 4; 
 kernel_0_00 = 0; kernel_0_01 = 0; kernel_0_02 = 1; 
 kernel_0_10 = 1; kernel_0_11 = 1; kernel_0_12 = 0; 
-kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0;  
+kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0; 
 kernel_1_00 = 0; kernel_1_01 = 0; kernel_1_02 = 1; 
 kernel_1_10 = 1; kernel_1_11 = 1; kernel_1_12 = 0; 
 kernel_1_20 = 0; kernel_1_21 = 1; kernel_1_22 = 0; 
@@ -716,18 +560,17 @@ kernel_2_10 = 1; kernel_2_11 = 1; kernel_2_12 = 0;
 kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0; 
 
 
-// Pixel no. : 0
+// Pixel no. : 8
 #20 pxl_0 = 1; pxl_1 = 1; pxl_2 = 1; 
 kernel_0_00 = 1; kernel_0_01 = 0; kernel_0_02 = 1; 
 kernel_0_10 = 1; kernel_0_11 = 0; kernel_0_12 = 0; 
-kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0;
+kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0; 
 kernel_1_00 = 1; kernel_1_01 = 0; kernel_1_02 = 1; 
 kernel_1_10 = 1; kernel_1_11 = 0; kernel_1_12 = 0; 
 kernel_1_20 = 0; kernel_1_21 = 1; kernel_1_22 = 0; 
 kernel_2_00 = 1; kernel_2_01 = 0; kernel_2_02 = 1; 
 kernel_2_10 = 1; kernel_2_11 = 0; kernel_2_12 = 0; 
 kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0; 
-
 
 #20 pxl_0 = 1; pxl_1 = 1; pxl_2 = 1; 
 kernel_0_00 = 0; kernel_0_01 = 0; kernel_0_02 = 1; 
@@ -754,7 +597,7 @@ kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0;
 #20 pxl_0 = 1; pxl_1 = 1; pxl_2 = 1; 
 kernel_0_00 = 0; kernel_0_01 = 0; kernel_0_02 = 1; 
 kernel_0_10 = 1; kernel_0_11 = 1; kernel_0_12 = 0; 
-kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0;  
+kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0; 
 kernel_1_00 = 0; kernel_1_01 = 0; kernel_1_02 = 1; 
 kernel_1_10 = 1; kernel_1_11 = 1; kernel_1_12 = 0; 
 kernel_1_20 = 0; kernel_1_21 = 1; kernel_1_22 = 0; 
@@ -763,18 +606,17 @@ kernel_2_10 = 1; kernel_2_11 = 1; kernel_2_12 = 0;
 kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0; 
 
 
-// Pixel no. : 0
+// Pixel no. : 9
 #20 pxl_0 = 2; pxl_1 = 2; pxl_2 = 2; 
 kernel_0_00 = 1; kernel_0_01 = 0; kernel_0_02 = 1; 
 kernel_0_10 = 1; kernel_0_11 = 0; kernel_0_12 = 0; 
-kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0;
+kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0; 
 kernel_1_00 = 1; kernel_1_01 = 0; kernel_1_02 = 1; 
 kernel_1_10 = 1; kernel_1_11 = 0; kernel_1_12 = 0; 
 kernel_1_20 = 0; kernel_1_21 = 1; kernel_1_22 = 0; 
 kernel_2_00 = 1; kernel_2_01 = 0; kernel_2_02 = 1; 
 kernel_2_10 = 1; kernel_2_11 = 0; kernel_2_12 = 0; 
 kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0; 
-
 
 #20 pxl_0 = 2; pxl_1 = 2; pxl_2 = 2; 
 kernel_0_00 = 0; kernel_0_01 = 0; kernel_0_02 = 1; 
@@ -787,7 +629,7 @@ kernel_2_00 = 0; kernel_2_01 = 0; kernel_2_02 = 1;
 kernel_2_10 = 1; kernel_2_11 = 1; kernel_2_12 = 0; 
 kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 1; 
 
-#20 pxl_0 = 2; pxl_1 = 2; pxl_2 = 2;  
+#20 pxl_0 = 2; pxl_1 = 2; pxl_2 = 2; 
 kernel_0_00 = 0; kernel_0_01 = 0; kernel_0_02 = 1; 
 kernel_0_10 = 1; kernel_0_11 = 1; kernel_0_12 = 0; 
 kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0; 
@@ -801,7 +643,7 @@ kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0;
 #20 pxl_0 = 2; pxl_1 = 2; pxl_2 = 2; 
 kernel_0_00 = 0; kernel_0_01 = 0; kernel_0_02 = 1; 
 kernel_0_10 = 1; kernel_0_11 = 1; kernel_0_12 = 0; 
-kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0;  
+kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0; 
 kernel_1_00 = 0; kernel_1_01 = 0; kernel_1_02 = 1; 
 kernel_1_10 = 1; kernel_1_11 = 1; kernel_1_12 = 0; 
 kernel_1_20 = 0; kernel_1_21 = 1; kernel_1_22 = 0; 
@@ -810,18 +652,17 @@ kernel_2_10 = 1; kernel_2_11 = 1; kernel_2_12 = 0;
 kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0; 
 
 
-// Pixel no. : 0
+// Pixel no. : 10
 #20 pxl_0 = 3; pxl_1 = 3; pxl_2 = 3; 
 kernel_0_00 = 1; kernel_0_01 = 0; kernel_0_02 = 1; 
 kernel_0_10 = 1; kernel_0_11 = 0; kernel_0_12 = 0; 
-kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0;
+kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0; 
 kernel_1_00 = 1; kernel_1_01 = 0; kernel_1_02 = 1; 
 kernel_1_10 = 1; kernel_1_11 = 0; kernel_1_12 = 0; 
 kernel_1_20 = 0; kernel_1_21 = 1; kernel_1_22 = 0; 
 kernel_2_00 = 1; kernel_2_01 = 0; kernel_2_02 = 1; 
 kernel_2_10 = 1; kernel_2_11 = 0; kernel_2_12 = 0; 
 kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0; 
-
 
 #20 pxl_0 = 3; pxl_1 = 3; pxl_2 = 3; 
 kernel_0_00 = 0; kernel_0_01 = 0; kernel_0_02 = 1; 
@@ -848,7 +689,7 @@ kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0;
 #20 pxl_0 = 3; pxl_1 = 3; pxl_2 = 3; 
 kernel_0_00 = 0; kernel_0_01 = 0; kernel_0_02 = 1; 
 kernel_0_10 = 1; kernel_0_11 = 1; kernel_0_12 = 0; 
-kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0;  
+kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0; 
 kernel_1_00 = 0; kernel_1_01 = 0; kernel_1_02 = 1; 
 kernel_1_10 = 1; kernel_1_11 = 1; kernel_1_12 = 0; 
 kernel_1_20 = 0; kernel_1_21 = 1; kernel_1_22 = 0; 
@@ -856,18 +697,18 @@ kernel_2_00 = 0; kernel_2_01 = 0; kernel_2_02 = 1;
 kernel_2_10 = 1; kernel_2_11 = 1; kernel_2_12 = 0; 
 kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0; 
 
-// Pixel no. : 0
+
+// Pixel no. : 11
 #20 pxl_0 = 4; pxl_1 = 4; pxl_2 = 4; 
 kernel_0_00 = 1; kernel_0_01 = 0; kernel_0_02 = 1; 
 kernel_0_10 = 1; kernel_0_11 = 0; kernel_0_12 = 0; 
-kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0;
+kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0; 
 kernel_1_00 = 1; kernel_1_01 = 0; kernel_1_02 = 1; 
 kernel_1_10 = 1; kernel_1_11 = 0; kernel_1_12 = 0; 
 kernel_1_20 = 0; kernel_1_21 = 1; kernel_1_22 = 0; 
 kernel_2_00 = 1; kernel_2_01 = 0; kernel_2_02 = 1; 
 kernel_2_10 = 1; kernel_2_11 = 0; kernel_2_12 = 0; 
 kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0; 
-
 
 #20 pxl_0 = 4; pxl_1 = 4; pxl_2 = 4; 
 kernel_0_00 = 0; kernel_0_01 = 0; kernel_0_02 = 1; 
@@ -894,13 +735,198 @@ kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0;
 #20 pxl_0 = 4; pxl_1 = 4; pxl_2 = 4; 
 kernel_0_00 = 0; kernel_0_01 = 0; kernel_0_02 = 1; 
 kernel_0_10 = 1; kernel_0_11 = 1; kernel_0_12 = 0; 
-kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0;  
+kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0; 
 kernel_1_00 = 0; kernel_1_01 = 0; kernel_1_02 = 1; 
 kernel_1_10 = 1; kernel_1_11 = 1; kernel_1_12 = 0; 
 kernel_1_20 = 0; kernel_1_21 = 1; kernel_1_22 = 0; 
 kernel_2_00 = 0; kernel_2_01 = 0; kernel_2_02 = 1; 
 kernel_2_10 = 1; kernel_2_11 = 1; kernel_2_12 = 0; 
 kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0; 
+
+
+// Pixel no. : 12
+#20 pxl_0 = 1; pxl_1 = 1; pxl_2 = 1; 
+kernel_0_00 = 1; kernel_0_01 = 0; kernel_0_02 = 1; 
+kernel_0_10 = 1; kernel_0_11 = 0; kernel_0_12 = 0; 
+kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0; 
+kernel_1_00 = 1; kernel_1_01 = 0; kernel_1_02 = 1; 
+kernel_1_10 = 1; kernel_1_11 = 0; kernel_1_12 = 0; 
+kernel_1_20 = 0; kernel_1_21 = 1; kernel_1_22 = 0; 
+kernel_2_00 = 1; kernel_2_01 = 0; kernel_2_02 = 1; 
+kernel_2_10 = 1; kernel_2_11 = 0; kernel_2_12 = 0; 
+kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0; 
+
+#20 pxl_0 = 1; pxl_1 = 1; pxl_2 = 1; 
+kernel_0_00 = 0; kernel_0_01 = 0; kernel_0_02 = 1; 
+kernel_0_10 = 1; kernel_0_11 = 1; kernel_0_12 = 0; 
+kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 1; 
+kernel_1_00 = 0; kernel_1_01 = 0; kernel_1_02 = 1; 
+kernel_1_10 = 1; kernel_1_11 = 1; kernel_1_12 = 0; 
+kernel_1_20 = 0; kernel_1_21 = 1; kernel_1_22 = 1; 
+kernel_2_00 = 0; kernel_2_01 = 0; kernel_2_02 = 1; 
+kernel_2_10 = 1; kernel_2_11 = 1; kernel_2_12 = 0; 
+kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 1; 
+
+#20 pxl_0 = 1; pxl_1 = 1; pxl_2 = 1; 
+kernel_0_00 = 0; kernel_0_01 = 0; kernel_0_02 = 1; 
+kernel_0_10 = 1; kernel_0_11 = 1; kernel_0_12 = 0; 
+kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0; 
+kernel_1_00 = 0; kernel_1_01 = 0; kernel_1_02 = 1; 
+kernel_1_10 = 1; kernel_1_11 = 1; kernel_1_12 = 0; 
+kernel_1_20 = 0; kernel_1_21 = 1; kernel_1_22 = 0; 
+kernel_2_00 = 0; kernel_2_01 = 0; kernel_2_02 = 1; 
+kernel_2_10 = 1; kernel_2_11 = 1; kernel_2_12 = 0; 
+kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0; 
+
+#20 pxl_0 = 1; pxl_1 = 1; pxl_2 = 1; 
+kernel_0_00 = 0; kernel_0_01 = 0; kernel_0_02 = 1; 
+kernel_0_10 = 1; kernel_0_11 = 1; kernel_0_12 = 0; 
+kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0; 
+kernel_1_00 = 0; kernel_1_01 = 0; kernel_1_02 = 1; 
+kernel_1_10 = 1; kernel_1_11 = 1; kernel_1_12 = 0; 
+kernel_1_20 = 0; kernel_1_21 = 1; kernel_1_22 = 0; 
+kernel_2_00 = 0; kernel_2_01 = 0; kernel_2_02 = 1; 
+kernel_2_10 = 1; kernel_2_11 = 1; kernel_2_12 = 0; 
+kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0; 
+
+
+// Pixel no. : 13
+#20 pxl_0 = 2; pxl_1 = 2; pxl_2 = 2; 
+kernel_0_00 = 1; kernel_0_01 = 0; kernel_0_02 = 1; 
+kernel_0_10 = 1; kernel_0_11 = 0; kernel_0_12 = 0; 
+kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0; 
+kernel_1_00 = 1; kernel_1_01 = 0; kernel_1_02 = 1; 
+kernel_1_10 = 1; kernel_1_11 = 0; kernel_1_12 = 0; 
+kernel_1_20 = 0; kernel_1_21 = 1; kernel_1_22 = 0; 
+kernel_2_00 = 1; kernel_2_01 = 0; kernel_2_02 = 1; 
+kernel_2_10 = 1; kernel_2_11 = 0; kernel_2_12 = 0; 
+kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0; 
+
+#20 pxl_0 = 2; pxl_1 = 2; pxl_2 = 2; 
+kernel_0_00 = 0; kernel_0_01 = 0; kernel_0_02 = 1; 
+kernel_0_10 = 1; kernel_0_11 = 1; kernel_0_12 = 0; 
+kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 1; 
+kernel_1_00 = 0; kernel_1_01 = 0; kernel_1_02 = 1; 
+kernel_1_10 = 1; kernel_1_11 = 1; kernel_1_12 = 0; 
+kernel_1_20 = 0; kernel_1_21 = 1; kernel_1_22 = 1; 
+kernel_2_00 = 0; kernel_2_01 = 0; kernel_2_02 = 1; 
+kernel_2_10 = 1; kernel_2_11 = 1; kernel_2_12 = 0; 
+kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 1; 
+
+#20 pxl_0 = 2; pxl_1 = 2; pxl_2 = 2; 
+kernel_0_00 = 0; kernel_0_01 = 0; kernel_0_02 = 1; 
+kernel_0_10 = 1; kernel_0_11 = 1; kernel_0_12 = 0; 
+kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0; 
+kernel_1_00 = 0; kernel_1_01 = 0; kernel_1_02 = 1; 
+kernel_1_10 = 1; kernel_1_11 = 1; kernel_1_12 = 0; 
+kernel_1_20 = 0; kernel_1_21 = 1; kernel_1_22 = 0; 
+kernel_2_00 = 0; kernel_2_01 = 0; kernel_2_02 = 1; 
+kernel_2_10 = 1; kernel_2_11 = 1; kernel_2_12 = 0; 
+kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0; 
+
+#20 pxl_0 = 2; pxl_1 = 2; pxl_2 = 2; 
+kernel_0_00 = 0; kernel_0_01 = 0; kernel_0_02 = 1; 
+kernel_0_10 = 1; kernel_0_11 = 1; kernel_0_12 = 0; 
+kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0; 
+kernel_1_00 = 0; kernel_1_01 = 0; kernel_1_02 = 1; 
+kernel_1_10 = 1; kernel_1_11 = 1; kernel_1_12 = 0; 
+kernel_1_20 = 0; kernel_1_21 = 1; kernel_1_22 = 0; 
+kernel_2_00 = 0; kernel_2_01 = 0; kernel_2_02 = 1; 
+kernel_2_10 = 1; kernel_2_11 = 1; kernel_2_12 = 0; 
+kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0; 
+
+
+// Pixel no. : 14
+#20 pxl_0 = 3; pxl_1 = 3; pxl_2 = 3; 
+kernel_0_00 = 1; kernel_0_01 = 0; kernel_0_02 = 1; 
+kernel_0_10 = 1; kernel_0_11 = 0; kernel_0_12 = 0; 
+kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0; 
+kernel_1_00 = 1; kernel_1_01 = 0; kernel_1_02 = 1; 
+kernel_1_10 = 1; kernel_1_11 = 0; kernel_1_12 = 0; 
+kernel_1_20 = 0; kernel_1_21 = 1; kernel_1_22 = 0; 
+kernel_2_00 = 1; kernel_2_01 = 0; kernel_2_02 = 1; 
+kernel_2_10 = 1; kernel_2_11 = 0; kernel_2_12 = 0; 
+kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0; 
+
+#20 pxl_0 = 3; pxl_1 = 3; pxl_2 = 3; 
+kernel_0_00 = 0; kernel_0_01 = 0; kernel_0_02 = 1; 
+kernel_0_10 = 1; kernel_0_11 = 1; kernel_0_12 = 0; 
+kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 1; 
+kernel_1_00 = 0; kernel_1_01 = 0; kernel_1_02 = 1; 
+kernel_1_10 = 1; kernel_1_11 = 1; kernel_1_12 = 0; 
+kernel_1_20 = 0; kernel_1_21 = 1; kernel_1_22 = 1; 
+kernel_2_00 = 0; kernel_2_01 = 0; kernel_2_02 = 1; 
+kernel_2_10 = 1; kernel_2_11 = 1; kernel_2_12 = 0; 
+kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 1; 
+
+#20 pxl_0 = 3; pxl_1 = 3; pxl_2 = 3; 
+kernel_0_00 = 0; kernel_0_01 = 0; kernel_0_02 = 1; 
+kernel_0_10 = 1; kernel_0_11 = 1; kernel_0_12 = 0; 
+kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0; 
+kernel_1_00 = 0; kernel_1_01 = 0; kernel_1_02 = 1; 
+kernel_1_10 = 1; kernel_1_11 = 1; kernel_1_12 = 0; 
+kernel_1_20 = 0; kernel_1_21 = 1; kernel_1_22 = 0; 
+kernel_2_00 = 0; kernel_2_01 = 0; kernel_2_02 = 1; 
+kernel_2_10 = 1; kernel_2_11 = 1; kernel_2_12 = 0; 
+kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0; 
+
+#20 pxl_0 = 3; pxl_1 = 3; pxl_2 = 3; 
+kernel_0_00 = 0; kernel_0_01 = 0; kernel_0_02 = 1; 
+kernel_0_10 = 1; kernel_0_11 = 1; kernel_0_12 = 0; 
+kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0; 
+kernel_1_00 = 0; kernel_1_01 = 0; kernel_1_02 = 1; 
+kernel_1_10 = 1; kernel_1_11 = 1; kernel_1_12 = 0; 
+kernel_1_20 = 0; kernel_1_21 = 1; kernel_1_22 = 0; 
+kernel_2_00 = 0; kernel_2_01 = 0; kernel_2_02 = 1; 
+kernel_2_10 = 1; kernel_2_11 = 1; kernel_2_12 = 0; 
+kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0; 
+
+
+// Pixel no. : 15
+#20 pxl_0 = 4; pxl_1 = 4; pxl_2 = 4; 
+kernel_0_00 = 1; kernel_0_01 = 0; kernel_0_02 = 1; 
+kernel_0_10 = 1; kernel_0_11 = 0; kernel_0_12 = 0; 
+kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0; 
+kernel_1_00 = 1; kernel_1_01 = 0; kernel_1_02 = 1; 
+kernel_1_10 = 1; kernel_1_11 = 0; kernel_1_12 = 0; 
+kernel_1_20 = 0; kernel_1_21 = 1; kernel_1_22 = 0; 
+kernel_2_00 = 1; kernel_2_01 = 0; kernel_2_02 = 1; 
+kernel_2_10 = 1; kernel_2_11 = 0; kernel_2_12 = 0; 
+kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0; 
+
+#20 pxl_0 = 4; pxl_1 = 4; pxl_2 = 4; 
+kernel_0_00 = 0; kernel_0_01 = 0; kernel_0_02 = 1; 
+kernel_0_10 = 1; kernel_0_11 = 1; kernel_0_12 = 0; 
+kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 1; 
+kernel_1_00 = 0; kernel_1_01 = 0; kernel_1_02 = 1; 
+kernel_1_10 = 1; kernel_1_11 = 1; kernel_1_12 = 0; 
+kernel_1_20 = 0; kernel_1_21 = 1; kernel_1_22 = 1; 
+kernel_2_00 = 0; kernel_2_01 = 0; kernel_2_02 = 1; 
+kernel_2_10 = 1; kernel_2_11 = 1; kernel_2_12 = 0; 
+kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 1; 
+
+#20 pxl_0 = 4; pxl_1 = 4; pxl_2 = 4; 
+kernel_0_00 = 0; kernel_0_01 = 0; kernel_0_02 = 1; 
+kernel_0_10 = 1; kernel_0_11 = 1; kernel_0_12 = 0; 
+kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0; 
+kernel_1_00 = 0; kernel_1_01 = 0; kernel_1_02 = 1; 
+kernel_1_10 = 1; kernel_1_11 = 1; kernel_1_12 = 0; 
+kernel_1_20 = 0; kernel_1_21 = 1; kernel_1_22 = 0; 
+kernel_2_00 = 0; kernel_2_01 = 0; kernel_2_02 = 1; 
+kernel_2_10 = 1; kernel_2_11 = 1; kernel_2_12 = 0; 
+kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0; 
+
+#20 pxl_0 = 4; pxl_1 = 4; pxl_2 = 4; 
+kernel_0_00 = 0; kernel_0_01 = 0; kernel_0_02 = 1; 
+kernel_0_10 = 1; kernel_0_11 = 1; kernel_0_12 = 0; 
+kernel_0_20 = 0; kernel_0_21 = 1; kernel_0_22 = 0; 
+kernel_1_00 = 0; kernel_1_01 = 0; kernel_1_02 = 1; 
+kernel_1_10 = 1; kernel_1_11 = 1; kernel_1_12 = 0; 
+kernel_1_20 = 0; kernel_1_21 = 1; kernel_1_22 = 0; 
+kernel_2_00 = 0; kernel_2_01 = 0; kernel_2_02 = 1; 
+kernel_2_10 = 1; kernel_2_11 = 1; kernel_2_12 = 0; 
+kernel_2_20 = 0; kernel_2_21 = 1; kernel_2_22 = 0; 
+
 
 // End of Script 
 	

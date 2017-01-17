@@ -105,8 +105,7 @@ module cnn_l1_test;
 	wire [15:0] pxl_out_0;
 	wire [15:0] pxl_out_1;
 	wire [15:0] pxl_out_2;
-	wire [15:0] pxl_out;
-	wire valid;
+	wire [15:0] pxl_out; wire valid;
 
 	// Instantiate the Unit Under Test (UUT)
 	cnn_l1 uut (
@@ -152,12 +151,10 @@ module cnn_l1_test;
 	initial begin
 		// Initialize Inputs
 		clk = 0;
-		reset = 0;
-
+		
 		// Wait 100 ns for global reset to finish
-		#100;
-        
-		// Add stimulus here		\n\n""")
+		#110;
+      reset = 0; 				\n\n""")
 
 	f.write("/*\n\n")
 	f.write("Image: " + "\n")
@@ -185,7 +182,8 @@ module cnn_l1_test;
 					for l in range(0, len(kernel[0])):
 						f.write("kernel_"+str(index1)+"_"+str(k)+str(l)+" = "+str(kernel[k, l]) + "; ")		
 					f.write("\n")
-		f.write("\n\n")
+			f.write("\n")
+		f.write("\n")
 
 	f.write("// End of Script \n")
 	f.write("""	
