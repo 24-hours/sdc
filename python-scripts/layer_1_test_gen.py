@@ -1,6 +1,35 @@
 from PIL import Image
 import numpy as np
 
+N_IMAGE = 0
+USE_IMAGE_FILE = True
+
+INPUT_IMAGE = np.asarray(np.matrix("4 2 4 4 5 1;\
+									5 7 8 9 10 2;\
+									4 2 2 1 0 3;\
+									1 2 3 4 5 4"))
+
+# Set: 1
+kernel_0_0 =  np.asarray(np.matrix("1 0 1; 1 0 0; 0 1 0"))
+kernel_0_1 =  np.asarray(np.matrix("1 0 1; 1 0 0; 0 1 0"))
+kernel_0_2 =  np.asarray(np.matrix("1 0 1; 1 0 0; 0 1 0")) 
+
+# Set: 2
+kernel_1_0 =  np.asarray(np.matrix("0 0 1; 1 1 0; 0 1 1"))
+kernel_1_1 =  np.asarray(np.matrix("0 0 1; 1 1 0; 0 1 1"))
+kernel_1_2 =  np.asarray(np.matrix("0 0 1; 1 1 0; 0 1 1")) 
+
+# Set: 3
+kernel_2_0 =  np.asarray(np.matrix("0 0 1; 1 1 0; 0 1 0")) 
+kernel_2_1 =  np.asarray(np.matrix("0 0 1; 1 1 0; 0 1 0"))
+kernel_2_2 =  np.asarray(np.matrix("0 0 1; 1 1 0; 0 1 0"))
+
+# Set: 4
+kernel_3_0 =  np.asarray(np.matrix("0 0 1; 1 1 0; 0 1 0"))
+kernel_3_1 =  np.asarray(np.matrix("0 0 1; 1 1 0; 0 1 0"))
+kernel_3_2 =  np.asarray(np.matrix("0 0 1; 1 1 0; 0 1 0")) 
+
+
 def conv(image, kernel):
 	result = []
 	k = len(kernel)
@@ -105,7 +134,8 @@ module cnn_l1_test;
 	wire [15:0] pxl_out_0;
 	wire [15:0] pxl_out_1;
 	wire [15:0] pxl_out_2;
-	wire [15:0] pxl_out; wire valid;
+	wire [15:0] pxl_out; 
+	wire valid;
 
 	// Instantiate the Unit Under Test (UUT)
 	cnn_l1 uut (
@@ -157,18 +187,31 @@ module cnn_l1_test;
       reset = 0; 				\n\n""")
 
 	f.write("/*\n\n")
-	f.write("Image: " + "\n")
-	f.write('\n'.join('\t'.join('%d' %x for x in y) for y in image) + "\n\n")
+	f.write("-------------------- Images: ----------------" + "\n\n")
+	print("---------------- Images: ----------------" + "\n")
 
-	f.write("Kernels: " + "\n")
-	for kernel_set in kernel_sets:
+	for image in images:
+		f.write('\n'.join('\t'.join('%d' %x for x in y) for y in image) + "\n\n")
+		f.write("------------------------------------\n\n")
+		print('\n'.join('\t'.join('%d' %x for x in y) for y in image) + "\n")
+		print("------------------------------------\n")
+
+	f.write("-------------------- Kernels: --------------------" + "\n\n")
+	print("---------------- Kernels: ----------------" + "\n")
+	for index, kernel_set in enumerate(kernel_sets):
+		f.write("---\nSet number:" + str(index) + "\n")
+		print("---\nSet number:" + str(index))
 		for kernel in kernel_set:
 			f.write('\n'.join('\t'.join('%d' %x for x in y) for y in kernel) + "\n\n")
+			print('\n'.join('\t'.join('%d' %x for x in y) for y in kernel) + "\n")
 
-	f.write("Results: " + "\n")
+	f.write("-------------------- Results: --------------------" + "\n\n")
+	print("---------------- Results: ----------------" + "\n")
 	for index, results in enumerate(results_list):
-		f.write("Set number:" + str(index) + "\n")
+		f.write("---\nSet number:" + str(index) + "\n")
+		print("---\nSet number:" + str(index))
 		f.write('\n'.join('\t'.join('%d' %x for x in y) for y in results) + "\n\n")
+		print('\n'.join('\t'.join('%d' %x for x in y) for y in results) + "\n\n")
 	f.write("*/\n\n")
 
 	for i in range(0, len(f_image[0])):
@@ -212,47 +255,27 @@ def set_row_shift(num):
 		myfile.write(file_data)
 		myfile.close()
 
-#image = Image.open('driving_dataset/0.jpg')
-#image_resized = np.asarray(image.resize((200, 66), Image.ANTIALIAS))
 
-#input_matrix = image_resized[:,:,0]
+image = Image.open('driving_dataset/'+str(N_IMAGE)+'.jpg')
+image_resized = np.asarray(image.resize((10, 3), Image.ANTIALIAS)) / 10
 
-input_image = np.asarray(np.matrix("1 2 3 4;\
-									 1 2 3 4;\
-									 1 2 3 4;\
-									 1 2 3 4"))
-"""
+input_r = image_resized[:,:,0]
+input_g = image_resized[:,:,1]
+input_b = image_resized[:,:,2]
 
-input_image = np.asarray(np.matrix("1 2 3 4;\
-									1 2 3 4;\
-									1 2 3 4"))
-"""
-input_matrix = [input_image, input_image, input_image]
-
-kernel_0_0 =  np.asarray(np.matrix("1 0 1; 1 0 0; 0 1 0"))
-kernel_0_1 =  np.asarray(np.matrix("1 0 1; 1 0 0; 0 1 0"))
-kernel_0_2 =  np.asarray(np.matrix("1 0 1; 1 0 0; 0 1 0")) 
-
-kernel_1_0 =  np.asarray(np.matrix("0 0 1; 1 1 0; 0 1 1"))
-kernel_1_1 =  np.asarray(np.matrix("0 0 1; 1 1 0; 0 1 1"))
-kernel_1_2 =  np.asarray(np.matrix("0 0 1; 1 1 0; 0 1 1")) 
-
-kernel_2_0 =  np.asarray(np.matrix("0 0 1; 1 1 0; 0 1 0")) 
-kernel_2_1 =  np.asarray(np.matrix("0 0 1; 1 1 0; 0 1 0"))
-kernel_2_2 =  np.asarray(np.matrix("0 0 1; 1 1 0; 0 1 0"))
-
-kernel_3_0 =  np.asarray(np.matrix("0 0 1; 1 1 0; 0 1 0"))
-kernel_3_1 =  np.asarray(np.matrix("0 0 1; 1 1 0; 0 1 0"))
-kernel_3_2 =  np.asarray(np.matrix("0 0 1; 1 1 0; 0 1 0")) 
-
+input_r = np.asarray([[int(x) for x in y] for y in input_r])
+input_g = np.asarray([[int(x) for x in y] for y in input_g])
+input_b = np.asarray([[int(x) for x in y] for y in input_b])
 
 kernel_set_0 = [kernel_0_0, kernel_0_1, kernel_0_2]
 kernel_set_1 = [kernel_1_0, kernel_1_1, kernel_1_2]
 kernel_set_2 = [kernel_2_0, kernel_2_1, kernel_2_2]
 kernel_set_3 = [kernel_3_0, kernel_3_1, kernel_3_2]
-
 kernel_sets = [kernel_set_0, kernel_set_1, kernel_set_2, kernel_set_3]
 
-gen_script(input_matrix, kernel_sets)
+if USE_IMAGE_FILE:
+	input_matrix = [input_r, input_g, input_b]
+else:
+	input_matrix = [INPUT_IMAGE, INPUT_IMAGE, INPUT_IMAGE]
 
-#print(conv(input_matrix[0], kernel_0_0))
+gen_script(input_matrix, kernel_sets)
